@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Poing américain",
+    "level": 1,
+    "damages": 0.1,
+    "icon": "https://image.flaticon.com/icons/png/512/263/263094.png",
+    "available": false
+  },
+  {
+    "name": "Batte de baseball",
+    "level": 1,
+    "damages": 0.1,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false
+  }
+]
