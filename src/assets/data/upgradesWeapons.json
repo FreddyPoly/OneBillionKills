@@ -1,0 +1,75 @@
+[
+  
+  {
+    "name": "Poings",
+    "level": 1,
+    "damages": 0.1,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 9
+    }
+  },
+  {
+    "name": "Poing américain",
+    "level": 0,
+    "damages": 0.5,
+    "icon": "https://image.flaticon.com/icons/png/512/263/263094.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 49
+    }
+  },
+  {
+    "name": "Batte de baseball",
+    "level": 0,
+    "damages": 0.75,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 99
+    }
+  },
+  {
+    "name": "Couteau",
+    "level": 0,
+    "damages": 1,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 159
+    }
+  },
+  {
+    "name": "Sabre",
+    "level": 0,
+    "damages": 1.35,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 179
+    }
+  },
+  {
+    "name": "Gants de boxe",
+    "level": 0,
+    "damages": 1.75,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 349
+    }
+  }
+]
