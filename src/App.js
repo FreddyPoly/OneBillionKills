@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import UpgradesContainer from './scenes/upgrades/UpgradesContainer.js';
+import Main from './scenes/Main.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <UpgradesContainer />
+        <Main />
       </div>
     );
   }

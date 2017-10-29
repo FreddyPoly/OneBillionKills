@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import UpgradeCard from './UpgradeCard.js';
 
-import upgradesWeapons from '../../assets/data/upgradesWeapons.json';
-
 class UpgradesContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    };
-  }
-
   render() {
     return (
       <div style={ styles.container }>
-        {upgradesWeapons.map((upgrade) => (
-          <UpgradeCard props={ upgrade } key={ upgrade.name }/>
+        {this.props.upgradesWeapons.map((upgrade, index) => (
+          <UpgradeCard upgrade={upgrade} index={index} key={upgrade.name} triggerUpgrade={this.props.triggerUpgrade} />
         ))}
       </div>
     );
@@ -24,9 +15,11 @@ class UpgradesContainer extends Component {
 
 const styles = {
   container: {
-    width: 300,
-    height: 500,
-    padding: 10,
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+
+    padding: 20,
     overflow: 'auto',
     backgroundColor: 'blue',
   },
