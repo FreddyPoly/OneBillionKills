@@ -33,16 +33,18 @@ class UpgradeCard extends Component {
 
   render() {
     return (
-      <div style={ styles.container } onClick={this.onClick}>
-        <div style={styles.imgContainer}>
-          <img
-            style={styles.icon}
-            alt={ this.props.upgrade.name }
-            src={ this.props.upgrade.icon } />
-        </div>
-        <div style={styles.textContainer}>
-          <p>{this.props.upgrade.name} - {this.props.upgrade.level}</p>
-          <p>Prix: {this.state.price}</p>
+      <div className="upgrade-card" style={ styles.container } onClick={this.onClick}>
+        <div style={ styles.flexContainer }>
+          <div style={styles.imgContainer}>
+            <img
+              style={styles.icon}
+              alt={ this.props.upgrade.name }
+              src={ this.props.upgrade.icon } />
+          </div>
+          <div style={styles.textContainer}>
+            <p>{this.props.upgrade.name} - {this.props.upgrade.level}</p>
+            <p>Prix: {this.state.price}</p>
+          </div>
         </div>
       </div>
     );
@@ -51,15 +53,18 @@ class UpgradeCard extends Component {
 
 const styles = {
   container: {
+    height: 120,
+
+    backgroundColor: 'yellow',
+    marginBottom: 20,
+    padding: 20,
+  },
+  flexContainer: {
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-
-    backgroundColor: 'yellow',
-    marginBottom: 20,
-    padding: 20,
   },
   imgContainer: {
     display: 'flex',

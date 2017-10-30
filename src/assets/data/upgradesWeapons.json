@@ -71,5 +71,29 @@
       "b": 1.1,
       "c": 349
     }
+  },
+  {
+    "name": "Pistolet",
+    "level": 0,
+    "damages": 2.5,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 599
+    }
+  },
+  {
+    "name": "Revolver",
+    "level": 0,
+    "damages": 3,
+    "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
+    "available": false,
+    "price": {
+      "a": 1,
+      "b": 1.1,
+      "c": 749
+    }
   }
 ]
