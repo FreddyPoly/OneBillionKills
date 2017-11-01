@@ -4,6 +4,9 @@ class HeaderContainer extends Component {
   render() {
     return (
       <div style={ styles.container }>
+        <p style={ styles.data } >{ this.props.damagesPerSecond } dégâts/s</p>
+        <p style={ styles.data } >{ this.props.money } argent</p>
+        <p style={ styles.data } >0 zombies tués</p>
       </div>
     );
   }
@@ -14,10 +17,16 @@ const styles = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
 
     padding: 20,
-    overflow: 'auto',
     backgroundColor: 'green',
+  },
+  data: {
+    fontSize: 18,
+
+    margin: 0,
   },
 };
 

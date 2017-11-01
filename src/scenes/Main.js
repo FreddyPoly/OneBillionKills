@@ -11,14 +11,23 @@ class Main extends Component {
     this.state = {
       upgradesWeapons: [],
       damagesPerSecond: 0.1,
+      money: 0,
     };
   }
 
   componentWillMount = () => {
     this.setState({upgradesWeapons});
+
+    this._moneyLoop();
   }
 
-  triggerUpgrade = (index) => {
+  _moneyLoop = () => {
+    setInterval(() => {
+      this.setState({money: (parseFloat(this.state.money) + parseFloat(this.state.damagesPerSecond)).toFixed(2)});
+    }, 1000);
+  }
+
+  _triggerUpgrade = (index) => {
     // Mise à jour du niveau de l'upgrade
     const tmpUpgradesWeapons = this.state.upgradesWeapons;
     tmpUpgradesWeapons[index].level += 1;
@@ -36,17 +45,16 @@ class Main extends Component {
     return (
       <div className="Main" style={{height: windowHeight, width: windowWidth, display: 'flex', flex: 1, flexDirection: 'column'}}>
         <section style={styles.header}>
-          <HeaderContainer />
+          <HeaderContainer damagesPerSecond={this.state.damagesPerSecond} money={this.state.money} />
         </section>
 
         <section style={styles.gameSection}>
-          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this.triggerUpgrade} />
+          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
 
           <div style={styles.anim}>
-            <p>{ this.state.damagesPerSecond } dégâts / s</p>
           </div>
 
-          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this.triggerUpgrade} />
+          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
         </section>
 
       </div>
