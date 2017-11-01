@@ -27,7 +27,11 @@ class Main extends Component {
     }, 1000);
   }
 
-  _triggerUpgrade = (index) => {
+  _triggerUpgrade = (index, price) => {
+    // Mise à jour de l'argent
+    const tmpMoney = (parseFloat(this.state.money) - parseFloat(price)).toFixed(2);
+    this.setState({money: tmpMoney});
+
     // Mise à jour du niveau de l'upgrade
     const tmpUpgradesWeapons = this.state.upgradesWeapons;
     tmpUpgradesWeapons[index].level += 1;
@@ -36,6 +40,11 @@ class Main extends Component {
     // Mise à jour des dégâts par seconde
     const tmpDamages = parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesWeapons[index].damages);
     this.setState({damagesPerSecond: tmpDamages.toFixed(2)});
+  }
+
+  _manualDamages = () => {
+    const tmpMoney = (parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.money)).toFixed(2);
+    this.setState({money: tmpMoney});
   }
 
   render() {
@@ -49,9 +58,11 @@ class Main extends Component {
         </section>
 
         <section style={styles.gameSection}>
-          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
+          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} />
 
           <div style={styles.anim}>
+            <button style={{ height: 80, width: 80, backgroundColor: 'gold' }} onClick={this._manualDamages} >
+            </button>
           </div>
 
           <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
@@ -75,6 +86,8 @@ const styles = {
   anim: {
     display: 'flex',
     flex: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
 
     padding: 20,
     backgroundColor: 'red',

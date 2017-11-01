@@ -12,7 +12,7 @@ class UpgradeCard extends Component {
   }
 
   onClick = () => {
-    this.props.triggerUpgrade(this.props.index);
+    this.props.triggerUpgrade(this.props.index, this.state.price);
   }
 
   computePrice = (props) => {
@@ -33,19 +33,41 @@ class UpgradeCard extends Component {
 
   render() {
     return (
-      <div className="upgrade-card" style={ styles.container } onClick={this.onClick}>
-        <div style={ styles.flexContainer }>
-          <div style={styles.imgContainer}>
-            <img
-              style={styles.icon}
-              alt={ this.props.upgrade.name }
-              src={ this.props.upgrade.icon } />
-          </div>
-          <div style={styles.textContainer}>
-            <p>{this.props.upgrade.name} - {this.props.upgrade.level}</p>
-            <p>Prix: {this.state.price}</p>
-          </div>
-        </div>
+      <div className="upgrade-card">
+        {this.props.money < this.state.price ?
+          (<div
+            style={ styles.containerDisabled }>
+            <div style={ styles.flexContainer }>
+              <div style={styles.imgContainer}>
+                <img
+                  style={styles.icon}
+                  alt={ this.props.upgrade.name }
+                  src={ this.props.upgrade.icon } />
+              </div>
+              <div style={styles.textContainer}>
+                <p>{this.props.upgrade.name} - {this.props.upgrade.level}</p>
+                <p>Prix: {this.state.price}</p>
+              </div>
+            </div>
+          </div>)
+        :
+          (<div
+            style={ styles.container }
+            onClick={this.onClick} >
+            <div style={ styles.flexContainer }>
+              <div style={styles.imgContainer}>
+                <img
+                  style={styles.icon}
+                  alt={ this.props.upgrade.name }
+                  src={ this.props.upgrade.icon } />
+              </div>
+              <div style={styles.textContainer}>
+                <p>{this.props.upgrade.name} - {this.props.upgrade.level}</p>
+                <p>Prix: {this.state.price}</p>
+              </div>
+            </div>
+          </div>)
+        }
       </div>
     );
   }
@@ -56,6 +78,14 @@ const styles = {
     height: 120,
 
     backgroundColor: 'yellow',
+    marginBottom: 20,
+    padding: 20,
+    cursor: 'pointer',
+  },
+  containerDisabled: {
+    height: 120,
+    
+    backgroundColor: 'grey',
     marginBottom: 20,
     padding: 20,
   },

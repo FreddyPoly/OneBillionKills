@@ -6,7 +6,7 @@ class UpgradesContainer extends Component {
     return (
       <div className="upgrades-container" style={ styles.container }>
         {this.props.upgradesWeapons.map((upgrade, index) => (
-          <UpgradeCard upgrade={upgrade} index={index} key={upgrade.name} triggerUpgrade={this.props.triggerUpgrade} />
+          <UpgradeCard upgrade={upgrade} index={index} key={upgrade.name} triggerUpgrade={this.props.triggerUpgrade} money={this.props.money} />
         ))}
       </div>
     );
