@@ -6,7 +6,7 @@ class HeaderContainer extends Component {
       <div style={ styles.container }>
         <p style={ styles.data } >{ this.props.damagesPerSecond } dégâts/s</p>
         <p style={ styles.data } >{ this.props.money } argent</p>
-        <p style={ styles.data } >0 zombies tués</p>
+        <p style={ styles.data } >{ this.props.zombiesAmount } zombies tués</p>
       </div>
     );
   }
