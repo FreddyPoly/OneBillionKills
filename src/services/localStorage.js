@@ -12,10 +12,7 @@ const saveUpgradesWeapons = upgrades => {
   const tmpUpgrades = [];
 
   for (let i = 0; i < upgrades.length; i += 1) {
-    tmpUpgrades.push({
-      index: i,
-      level: upgrades[i].level,
-    });
+    tmpUpgrades.push(upgrades[i].level);
   }
 
   ls.set('UPGRADES_WEAPONS', tmpUpgrades);

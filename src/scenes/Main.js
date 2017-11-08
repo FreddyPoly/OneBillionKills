@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import UpgradesContainer from './upgrades/UpgradesContainer';
 import HeaderContainer from './header/HeaderContainer';
 import LoadingPage from './elements/LoadingPage';
+import Popup from './elements/Popup';
+import AnimationContainer from './animation/AnimationContainer';
 
 import upgradesWeapons from '../assets/data/upgradesWeapons.json';
 
@@ -17,7 +19,10 @@ class Main extends Component {
       money: 0,
       zombiesAmount: 0,
 
+      indexBestWeapon: 0,
+
       initialiazing: true,
+      saving: false,
     };
   }
 
@@ -33,15 +38,23 @@ class Main extends Component {
 
     if (savedUpgrades !== null) {
       const tmpUpgradesWeapons = upgradesWeapons;
+      let tmpDmg = 0;
       
       for (let i = 0; i < savedUpgrades.length; i += 1) {
-        const index = savedUpgrades[i].index;
-        const level = savedUpgrades[i].level;
-  
-        tmpUpgradesWeapons[index].level = level;
+        // Mise à jour du niveau de l'upgrade  
+        tmpUpgradesWeapons[i].level = savedUpgrades[i];
+
+        // Mise à jour des dégâts par seconde
+        tmpDmg += upgradesWeapons[i].damages * savedUpgrades[i];
+
+        // Mise à jour de la meilleure arme
+        if (savedUpgrades[i] > 0) {
+          this.setState({indexBestWeapon: i});
+        }
       }
   
       await this.setState({upgradesWeapons: tmpUpgradesWeapons});
+      await this.setState({damagesPerSecond: tmpDmg});
     } else {
       await this.setState({upgradesWeapons});
     }
@@ -65,6 +78,9 @@ class Main extends Component {
       localStorage.saveCurrentMoney(this.state.money);
       localStorage.saveZombiesAmount(this.state.zombiesAmount);
       localStorage.saveUpgradesWeapons(this.state.upgradesWeapons);
+
+      this.setState({saving: true});
+      setTimeout(() => this.setState({saving: false}), 2000);
     }, 10000);
   }
 
@@ -81,6 +97,9 @@ class Main extends Component {
     // Mise à jour des dégâts par seconde
     const tmpDamages = parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesWeapons[index].damages);
     this.setState({damagesPerSecond: tmpDamages.toFixed(2)});
+
+    // Mise à jour de la meilleure arme achetée
+    if (index > this.state.indexBestWeapon) this.setState({indexBestWeapon: index});
   }
 
   _manualDamages = () => {
@@ -94,6 +113,12 @@ class Main extends Component {
 
     return (
       <div className="Main">
+        {this.state.saving ?
+          <Popup />
+        :
+          null
+        }
+        
         {this.state.initialiazing ?
           <LoadingPage />
         :
@@ -106,8 +131,7 @@ class Main extends Component {
               <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} />
 
               <div style={styles.anim}>
-                <button style={{ height: 80, width: 80, backgroundColor: 'gold' }} onClick={this._manualDamages} >
-                </button>
+                <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} />
               </div>
 
               <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
@@ -132,11 +156,6 @@ const styles = {
   anim: {
     display: 'flex',
     flex: 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    padding: 20,
-    backgroundColor: 'red',
   },
 };
 
