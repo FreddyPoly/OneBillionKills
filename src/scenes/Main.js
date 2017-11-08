@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import UpgradesContainer from './upgrades/UpgradesContainer.js';
-import HeaderContainer from './header/HeaderContainer.js';
+import UpgradesContainer from './upgrades/UpgradesContainer';
+import HeaderContainer from './header/HeaderContainer';
+import LoadingPage from './elements/LoadingPage';
 
 import upgradesWeapons from '../assets/data/upgradesWeapons.json';
 
@@ -92,22 +93,27 @@ class Main extends Component {
     const windowWidth = window.innerWidth;
 
     return (
-      <div className="Main" style={{height: windowHeight, width: windowWidth, display: 'flex', flex: 1, flexDirection: 'column'}}>
-        <section style={styles.header}>
-          <HeaderContainer damagesPerSecond={this.state.damagesPerSecond} money={this.state.money} zombiesAmount={this.state.zombiesAmount} />
-        </section>
+      <div className="Main">
+        {this.state.initialiazing ?
+          <LoadingPage />
+        :
+          <div style={{height: windowHeight, width: windowWidth, display: 'flex', flex: 1, flexDirection: 'column'}}>
+            <section style={styles.header}>
+              <HeaderContainer damagesPerSecond={this.state.damagesPerSecond} money={this.state.money} zombiesAmount={this.state.zombiesAmount} />
+            </section>
 
-        <section style={styles.gameSection}>
-          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} />
+            <section style={styles.gameSection}>
+              <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} />
 
-          <div style={styles.anim}>
-            <button style={{ height: 80, width: 80, backgroundColor: 'gold' }} onClick={this._manualDamages} >
-            </button>
+              <div style={styles.anim}>
+                <button style={{ height: 80, width: 80, backgroundColor: 'gold' }} onClick={this._manualDamages} >
+                </button>
+              </div>
+
+              <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
+            </section>
           </div>
-
-          <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
-        </section>
-
+        }
       </div>
     );
   }
