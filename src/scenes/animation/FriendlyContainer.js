@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SpriteAnimator from '../../../node_modules/react-sprite-animator/lib';
 
 class FriendlyContainer extends Component {
   render() {
@@ -9,6 +10,12 @@ class FriendlyContainer extends Component {
         <p>{ this.props.bestWeapon.name }</p>
         <p>{ this.props.bestWeapon.level }</p>
         <p>{ this.props.bestWeapon.damages }</p>
+
+        <SpriteAnimator
+          width={36}
+          height={36}
+          fps={27}
+          sprite={require('../../assets/weapons/heart.svg')} />
       </div>
     );
   }
