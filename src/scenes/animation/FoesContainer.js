@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class FoesContainer extends Component {
   render() {
     return (
-      <div style={styles.container}>
+      <div
+        style={styles.container}
+        onClick={this.props.manualDamages} >
         <p>Méchants</p>
-        <button style={{ height: 80, width: 80, backgroundColor: 'gold' }} onClick={this.props.manualDamages} ></button>
       </div>
     );
   }
@@ -18,7 +19,8 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'gold'
+    backgroundColor: 'gold',
+    cursor: 'pointer',
   },
 };
 

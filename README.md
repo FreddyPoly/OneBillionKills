@@ -15,7 +15,7 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 - Revoir le taux d'argent gagné pour chaque upgrade
 - Jouer les animations en fonction de upgrades
 - Trouver comment positionner les animations dans le cadre
-- 
+- Feedback lors d'un clic manuel
 
 ### Design
 
