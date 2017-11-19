@@ -5,7 +5,7 @@ import LoadingPage from './elements/LoadingPage';
 import Popup from './elements/Popup';
 import AnimationContainer from './animation/AnimationContainer';
 
-import upgradesWeapons from '../assets/data/upgradesWeapons.json';
+import upgradesWeapons from '../assets/data/upgradesWeapons';
 
 import localStorage from '../services/localStorage';
 

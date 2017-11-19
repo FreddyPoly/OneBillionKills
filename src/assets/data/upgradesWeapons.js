@@ -1,5 +1,4 @@
-[
-  
+const upgradesWeapons = [
   {
     "name": "Poings",
     "level": 1,
@@ -9,7 +8,8 @@
       "a": 1,
       "b": 1.1,
       "c": 1
-    }
+    },
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Poing américain",
@@ -20,7 +20,8 @@
       "a": 1,
       "b": 1.1,
       "c": 4
-    }
+    },
+    "animation": require('../weapons/heart.svg')
   },
   {
     "name": "Batte de baseball",
@@ -31,7 +32,8 @@
       "a": 1,
       "b": 1.1,
       "c": 99
-    }
+    },
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Couteau",
@@ -42,7 +44,8 @@
       "a": 1,
       "b": 1.1,
       "c": 159
-    }
+    },
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Sabre",
@@ -53,7 +56,8 @@
       "a": 1,
       "b": 1.1,
       "c": 179
-    }
+    },
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Gants de boxe",
@@ -64,7 +68,8 @@
       "a": 1,
       "b": 1.1,
       "c": 349
-    }
+    },
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Pistolet",
@@ -75,7 +80,8 @@
       "a": 1,
       "b": 1.1,
       "c": 599
-    }
+    },
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Revolver",
@@ -86,6 +92,9 @@
       "a": 1,
       "b": 1.1,
       "c": 749
-    }
+    },
+    "animation": require('../weapons/test.svg')
   }
-]
+];
+
+export default upgradesWeapons;
