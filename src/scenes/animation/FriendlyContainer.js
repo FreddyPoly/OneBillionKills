@@ -12,10 +12,10 @@ class FriendlyContainer extends Component {
         <p>{ this.props.bestWeapon.damages }</p>
 
         <SpriteAnimator
-          width={36}
-          height={36}
-          fps={27}
-          sprite={require('../../assets/weapons/heart.svg')} />
+          width={72}
+          height={72}
+          fps={5}
+          sprite={require('../../assets/weapons/test.svg')} />
       </div>
     );
   }
