@@ -9,14 +9,15 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 
 ### Fonctionnel
 
+- Créer le fichier des upgradesAllies
+- Placer tous les alliés dans le cadre
+- Définir la formule pour faire apparaitre les zombies
+
 - Définir le critère affichant les upgrades disponibles à l'achat (sinon ne pas les afficher du tout)
 - Définir la formule de calcul pour le nombre de zombies tués
 
 - Revoir la formule de calcul des prix
 - Revoir le taux d'argent gagné pour chaque upgrade
-
-- Jouer les animations en fonction de upgrades
-- Placer tous les alliés dans le cadre
 
 - Feedback lors d'un clic manuel
 
