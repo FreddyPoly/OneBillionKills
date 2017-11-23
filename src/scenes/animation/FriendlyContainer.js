@@ -6,11 +6,29 @@ class FriendlyContainer extends Component {
     return (
       <div style={styles.container}>
         <div style={ styles.hero } >
-          <SpriteAnimator
-            width={72}
-            height={72}
-            fps={5}
-            sprite={this.props.bestWeapon.animation} />
+          <div style={{position: 'relative'}}>
+            <div style={{position: 'absolute', right: 0}}>
+              <SpriteAnimator
+                width={72}
+                height={72}
+                fps={5}
+                sprite={this.props.bestWeapon.animation} />
+            </div>
+            <div style={{position: 'absolute', right: 30}}>
+              <SpriteAnimator
+                width={72}
+                height={72}
+                fps={5}
+                sprite={this.props.bestWeapon.animation} />
+            </div>
+            <div style={{position: 'absolute', right: 45}}>
+              <SpriteAnimator
+                width={72}
+                height={72}
+                fps={5}
+                sprite={this.props.bestWeapon.animation} />
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -29,7 +47,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'flex-end',
     marginRight: 10
-  }
+  },
 };
 
 export default FriendlyContainer;

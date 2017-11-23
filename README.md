@@ -11,10 +11,13 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 
 - Définir le critère affichant les upgrades disponibles à l'achat (sinon ne pas les afficher du tout)
 - Définir la formule de calcul pour le nombre de zombies tués
+
 - Revoir la formule de calcul des prix
 - Revoir le taux d'argent gagné pour chaque upgrade
+
 - Jouer les animations en fonction de upgrades
-- Trouver comment positionner les animations dans le cadre
+- Placer tous les alliés dans le cadre
+
 - Feedback lors d'un clic manuel
 
 ### Design
