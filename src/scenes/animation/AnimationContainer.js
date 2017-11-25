@@ -8,7 +8,7 @@ class AnimationContainer extends Component {
     return (
       <div style={styles.container}>
         <section style={styles.container}>
-          <FriendlyContainer bestWeapon={this.props.bestWeapon} />
+          <FriendlyContainer bestWeapon={this.props.bestWeapon} upgradesAllies={this.props.upgradesAllies} />
         </section>
 
         <section style={styles.container}>

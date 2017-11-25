@@ -21,7 +21,7 @@ const upgradesAllies = [
       "b": 1.1,
       "c": 4
     },
-    "animation": require('../weapons/heart.svg')
+    "animation": require('../weapons/test.svg')
   },
   {
     "name": "Tourelle v2",

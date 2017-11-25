@@ -5,7 +5,7 @@ class FriendlyContainer extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <div style={ styles.hero } >
+        <div style={ styles.general } >
           <div style={{position: 'relative'}}>
             <div style={{position: 'absolute', right: 0}}>
               <SpriteAnimator
@@ -14,20 +14,83 @@ class FriendlyContainer extends Component {
                 fps={5}
                 sprite={this.props.bestWeapon.animation} />
             </div>
-            <div style={{position: 'absolute', right: 30}}>
-              <SpriteAnimator
-                width={72}
-                height={72}
-                fps={5}
-                sprite={this.props.bestWeapon.animation} />
-            </div>
-            <div style={{position: 'absolute', right: 45}}>
-              <SpriteAnimator
-                width={72}
-                height={72}
-                fps={5}
-                sprite={this.props.bestWeapon.animation} />
-            </div>
+
+            { this.props.upgradesAllies[0].level > 0 ?
+              <div style={{position: 'absolute', right: 30}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[0].animation} />
+              </div>
+            :
+              null }
+            
+            { this.props.upgradesAllies[1].level > 0 ?
+              <div style={{position: 'absolute', right: 60}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[1].animation} />
+              </div>
+            :
+              null }
+              
+            { this.props.upgradesAllies[2].level > 0 ?
+              <div style={{position: 'absolute', right: 90, bottom: 50}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[2].animation} />
+              </div>
+            :
+              null }
+              
+            { this.props.upgradesAllies[3].level > 0 ?
+              <div style={{position: 'absolute', right: 90}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[3].animation} />
+              </div>
+            :
+              null }
+              
+            { this.props.upgradesAllies[4].level > 0 ?
+              <div style={{position: 'absolute', right: 120}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[4].animation} />
+              </div>
+            :
+              null }
+              
+            { this.props.upgradesAllies[5].level > 0 ?
+              <div style={{position: 'absolute', right: 150, bottom: 80}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[5].animation} />
+              </div>
+            :
+              null }
+              
+            { this.props.upgradesAllies[6].level > 0 ?
+              <div style={{position: 'absolute', right: 180}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  sprite={this.props.upgradesAllies[6].animation} />
+              </div>
+            :
+              null }
           </div>
         </div>
       </div>
@@ -43,7 +106,7 @@ const styles = {
     justifyContent: 'center',
     backgroundColor: 'lightgreen'
   },
-  hero: {
+  general: {
     display: 'flex',
     justifyContent: 'flex-end',
     marginRight: 10

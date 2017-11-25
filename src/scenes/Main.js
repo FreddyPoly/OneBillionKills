@@ -152,7 +152,7 @@ class Main extends Component {
               <UpgradesContainer upgrades={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='weapons' />
 
               <div style={styles.anim}>
-                <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} />
+                <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} upgradesAllies={this.state.upgradesAllies} />
               </div>
 
               <UpgradesContainer upgrades={this.state.upgradesAllies} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='allies' />

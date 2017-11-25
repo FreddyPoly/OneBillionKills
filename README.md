@@ -9,7 +9,6 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 
 ### Fonctionnel
 
-- Créer le fichier des upgradesAllies
 - Placer tous les alliés dans le cadre
 - Définir la formule pour faire apparaitre les zombies
 
