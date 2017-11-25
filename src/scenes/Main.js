@@ -6,6 +6,7 @@ import Popup from './elements/Popup';
 import AnimationContainer from './animation/AnimationContainer';
 
 import upgradesWeapons from '../assets/data/upgradesWeapons';
+import upgradesAllies from '../assets/data/upgradesAllies';
 
 import localStorage from '../services/localStorage';
 
@@ -15,6 +16,7 @@ class Main extends Component {
 
     this.state = {
       upgradesWeapons: [],
+      upgradesAllies: [],
       damagesPerSecond: 0.1,
       money: 0,
       zombiesAmount: 0,
@@ -34,30 +36,41 @@ class Main extends Component {
     const tmpZombiesAmount = await localStorage.getZombiesAmount();
     await this.setState({zombiesAmount: tmpZombiesAmount !== null ? tmpZombiesAmount : 0});
 
-    const savedUpgrades = await localStorage.getUpgradesWeapons();
+    const savedUpgradesWeapons = await localStorage.getUpgradesWeapons();
+    const savedUpgradesAllies = await localStorage.getUpgradesAllies();
 
-    if (savedUpgrades !== null) {
-      const tmpUpgradesWeapons = upgradesWeapons;
-      let tmpDmg = 0;
-      
-      for (let i = 0; i < savedUpgrades.length; i += 1) {
-        // Mise à jour du niveau de l'upgrade  
-        tmpUpgradesWeapons[i].level = savedUpgrades[i];
+    const tmpUpgradesWeapons = upgradesWeapons;
+    const tmpUpgradesAllies = upgradesAllies;
+    let tmpDmg = 0;
+    
+    if (savedUpgradesWeapons !== null) {
+      for (let i = 0; i < savedUpgradesWeapons.length; i += 1) {
+        // Mise à jour du niveau de l'upgrade
+        tmpUpgradesWeapons[i].level = savedUpgradesWeapons[i];
 
         // Mise à jour des dégâts par seconde
-        tmpDmg += upgradesWeapons[i].damages * savedUpgrades[i];
+        tmpDmg += upgradesWeapons[i].damages * savedUpgradesWeapons[i];
 
         // Mise à jour de la meilleure arme
-        if (savedUpgrades[i] > 0) {
+        if (savedUpgradesWeapons[i] > 0) {
           this.setState({indexBestWeapon: i});
         }
       }
-  
-      await this.setState({upgradesWeapons: tmpUpgradesWeapons});
-      await this.setState({damagesPerSecond: tmpDmg});
-    } else {
-      await this.setState({upgradesWeapons});
     }
+
+    if (savedUpgradesAllies !== null) {
+      for (let i = 0; i < savedUpgradesAllies.length; i += 1) {
+        // Mise à jour du niveau de l'upgrade
+        tmpUpgradesAllies[i].level = savedUpgradesAllies[i];
+
+        // Mise à jour des dégâts par seconde
+        tmpDmg += upgradesAllies[i].damages * savedUpgradesAllies[i];
+      }
+    }
+
+    await this.setState({upgradesWeapons: tmpUpgradesWeapons});
+    await this.setState({upgradesAllies: tmpUpgradesAllies});
+    await this.setState({damagesPerSecond: tmpDmg});
 
     // Initialiser les boucles de jeu
     this._moneyLoop();
@@ -78,24 +91,32 @@ class Main extends Component {
       localStorage.saveCurrentMoney(this.state.money);
       localStorage.saveZombiesAmount(this.state.zombiesAmount);
       localStorage.saveUpgradesWeapons(this.state.upgradesWeapons);
+      localStorage.saveUpgradesAllies(this.state.upgradesAllies);
 
       this.setState({saving: true});
       setTimeout(() => this.setState({saving: false}), 2000);
     }, 10000);
   }
 
-  _triggerUpgrade = (index, price) => {
+  _triggerUpgrade = (type, index, price) => {
     // Mise à jour de l'argent
     const tmpMoney = (parseFloat(this.state.money) - parseFloat(price)).toFixed(2);
     this.setState({money: tmpMoney});
 
     // Mise à jour du niveau de l'upgrade
-    const tmpUpgradesWeapons = this.state.upgradesWeapons;
-    tmpUpgradesWeapons[index].level += 1;
-    this.setState({upgradesWeapons: tmpUpgradesWeapons});
+    const tmpUpgrades = type === 'weapons' ? this.state.upgradesWeapons : this.state.upgradesAllies;
+    tmpUpgrades[index].level += 1;
+    if (type === 'weapons') {
+      this.setState({upgradesWeapons: tmpUpgrades});
+    } else {
+      this.setState({upgradesAllies: tmpUpgrades});
+    }
 
     // Mise à jour des dégâts par seconde
-    const tmpDamages = parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesWeapons[index].damages);
+    const tmpDamages = type === 'weapons' ?
+      parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesWeapons[index].damages)
+    :
+      parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesAllies[index].damages);
     this.setState({damagesPerSecond: tmpDamages.toFixed(2)});
 
     // Mise à jour de la meilleure arme achetée
@@ -128,13 +149,13 @@ class Main extends Component {
             </section>
 
             <section style={styles.gameSection}>
-              <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} />
+              <UpgradesContainer upgrades={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='weapons' />
 
               <div style={styles.anim}>
                 <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} />
               </div>
 
-              <UpgradesContainer upgradesWeapons={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} />
+              <UpgradesContainer upgrades={this.state.upgradesAllies} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='allies' />
             </section>
           </div>
         }

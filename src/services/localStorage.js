@@ -20,6 +20,18 @@ const saveUpgradesWeapons = upgrades => {
 
 const getUpgradesWeapons = () => ls.get('UPGRADES_WEAPONS');
 
+const saveUpgradesAllies = upgrades => {
+  const tmpUpgrades = [];
+
+  for (let i = 0; i < upgrades.length; i += 1) {
+    tmpUpgrades.push(upgrades[i].level);
+  }
+
+  ls.set('UPGRADES_ALLIES', tmpUpgrades);
+};
+
+const getUpgradesAllies = () => ls.get('UPGRADES_ALLIES');
+
 const localStorage = {};
 
 localStorage.saveCurrentMoney = saveCurrentMoney;
@@ -28,5 +40,7 @@ localStorage.saveZombiesAmount = saveZombiesAmount;
 localStorage.getZombiesAmount = getZombiesAmount;
 localStorage.saveUpgradesWeapons = saveUpgradesWeapons;
 localStorage.getUpgradesWeapons = getUpgradesWeapons;
+localStorage.saveUpgradesAllies = saveUpgradesAllies;
+localStorage.getUpgradesAllies = getUpgradesAllies;
 
 export default localStorage;

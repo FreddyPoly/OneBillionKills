@@ -12,7 +12,7 @@ class UpgradeCard extends Component {
   }
 
   onClick = () => {
-    this.props.triggerUpgrade(this.props.index, this.state.price);
+    this.props.triggerUpgrade(this.props.upgradeType, this.props.index, this.state.price);
   }
 
   computePrice = (props) => {
