@@ -7,6 +7,7 @@ import AnimationContainer from './animation/AnimationContainer';
 
 import upgradesWeapons from '../assets/data/upgradesWeapons';
 import upgradesAllies from '../assets/data/upgradesAllies';
+import basicZombies from '../assets/data/basicZombies';
 
 import localStorage from '../services/localStorage';
 
@@ -17,6 +18,10 @@ class Main extends Component {
     this.state = {
       upgradesWeapons: [],
       upgradesAllies: [],
+      foes: [],
+
+      basicFoes: basicZombies,
+
       damagesPerSecond: 0.1,
       money: 0,
       zombiesAmount: 0,
@@ -152,7 +157,7 @@ class Main extends Component {
               <UpgradesContainer upgrades={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='weapons' />
 
               <div style={styles.anim}>
-                <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} upgradesAllies={this.state.upgradesAllies} />
+                <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} upgradesAllies={this.state.upgradesAllies} foes={this.state.foes}basicFoes={this.state.basicFoes} />
               </div>
 
               <UpgradesContainer upgrades={this.state.upgradesAllies} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='allies' />

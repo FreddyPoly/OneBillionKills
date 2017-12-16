@@ -12,7 +12,7 @@ class AnimationContainer extends Component {
         </section>
 
         <section style={styles.container}>
-          <FoesContainer manualDamages={this.props.manualDamages} />
+          <FoesContainer manualDamages={this.props.manualDamages} foes={this.props.foes} basicFoes={this.props.basicFoes} />
         </section>
       </div>
     );

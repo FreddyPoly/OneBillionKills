@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SpriteAnimator from '../../../node_modules/react-sprite-animator/lib';
 
 class FoesContainer extends Component {
   render() {
@@ -6,7 +7,36 @@ class FoesContainer extends Component {
       <div
         style={styles.container}
         onClick={this.props.manualDamages} >
-        <p>Méchants</p>
+        <div style={ styles.general } >
+          <div style={{position: 'relative'}}>
+
+            { this.props.basicFoes.map((foe) => (
+              <div
+                key={foe.right.toString()}
+                style={{position: 'absolute', right: foe.right}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  startFrame={foe.startFrame}
+                  sprite={foe.animation} />
+              </div>
+            )) }
+          
+            { this.props.foes.map((foe, index) => (
+              <div
+                key={index.toString()}
+                style={{position: 'absolute', right: 90, bottom: 50}}>
+                <SpriteAnimator
+                  width={72}
+                  height={72}
+                  fps={5}
+                  stopLastFrame={true}
+                  sprite={foe.animation} />
+              </div>
+            )) }
+          </div>
+        </div>
       </div>
     );
   }
@@ -18,9 +48,12 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'gold',
     cursor: 'pointer',
+  },
+  general: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
 };
 
