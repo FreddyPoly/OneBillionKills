@@ -15,12 +15,18 @@ class Main extends Component {
   constructor(props) {
     super(props);
 
+    this.NB_ZOMBIES_MIN = 0;
+    this.NB_ZOMBIES_MAX = 2;
+
     this.state = {
       upgradesWeapons: [],
       upgradesAllies: [],
       foes: [],
 
       basicFoes: basicZombies,
+
+      nbZombiesMax: this.NB_ZOMBIES_MAX,
+      nbZombiesMin: this.NB_ZOMBIES_MIN,
 
       damagesPerSecond: 0.1,
       money: 0,
@@ -77,12 +83,28 @@ class Main extends Component {
     await this.setState({upgradesAllies: tmpUpgradesAllies});
     await this.setState({damagesPerSecond: tmpDmg});
 
+    // Calcul du nombre min et max de zombies à afficher
+    this._computeNbZombies();
+
     // Initialiser les boucles de jeu
     this._moneyLoop();
 
     this._saveLoop();
 
+    this._zombieLoop();
+
     this.setState({initialiazing: false});
+  }
+
+  _computeNbZombies = () => {
+    this.setState({nbZombiesMin: Math.min(this.NB_ZOMBIES_MIN + Math.floor(this.state.damagesPerSecond / 100), 10)});
+    this.setState({nbZombiesMax: Math.min(this.NB_ZOMBIES_MAX + Math.floor(this.state.damagesPerSecond / 50), 13)});
+  }
+
+  _zombieLoop = () => {
+    setInterval(() => {
+      // Génération des zombies
+    });
   }
 
   _moneyLoop = () => {
@@ -123,6 +145,8 @@ class Main extends Component {
     :
       parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesAllies[index].damages);
     this.setState({damagesPerSecond: tmpDamages.toFixed(2)});
+
+    this._computeNbZombies();
 
     // Mise à jour de la meilleure arme achetée
     if (index > this.state.indexBestWeapon) this.setState({indexBestWeapon: index});

@@ -26,7 +26,7 @@ class FoesContainer extends Component {
             { this.props.foes.map((foe, index) => (
               <div
                 key={index.toString()}
-                style={{position: 'absolute', right: 90, bottom: 50}}>
+                style={{position: 'absolute', right: 90}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
