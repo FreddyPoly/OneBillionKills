@@ -10,7 +10,7 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 ### Fonctionnel
 
 - Placer tous les alliés dans le cadre
-- Définir la formule pour faire apparaitre les zombies
+- Skin des zombies affiché aléatoire
 
 - Définir le critère affichant les upgrades disponibles à l'achat (sinon ne pas les afficher du tout)
 - Définir la formule de calcul pour le nombre de zombies tués

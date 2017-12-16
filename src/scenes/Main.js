@@ -8,6 +8,7 @@ import AnimationContainer from './animation/AnimationContainer';
 import upgradesWeapons from '../assets/data/upgradesWeapons';
 import upgradesAllies from '../assets/data/upgradesAllies';
 import basicZombies from '../assets/data/basicZombies';
+import zombies from '../assets/data/zombies';
 
 import localStorage from '../services/localStorage';
 
@@ -102,9 +103,23 @@ class Main extends Component {
   }
 
   _zombieLoop = () => {
-    setInterval(() => {
-      // Génération des zombies
-    });
+    setInterval(async () => {
+      this.setState({ foes: [] });
+
+      // Nombre de zombies à afficher
+      const nbZombies = Math.floor(Math.random() * this.state.nbZombiesMax) + this.state.nbZombiesMin;
+
+      for (let i = 0; i < nbZombies; i += 1) {
+        setTimeout(() => {
+          if (this.state.foes.length < this.state.nbZombiesMax) {
+            this.setState({ foes: [...this.state.foes, {
+              ...zombies[Math.floor(Math.random() * zombies.length) + 0],
+              right: Math.floor(Math.random() * 250) + 0,
+            }] });
+          }
+        }, Math.floor(Math.random() * 500) + 0);
+      }
+    }, 3000);
   }
 
   _moneyLoop = () => {
