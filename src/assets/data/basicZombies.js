@@ -1,6 +1,6 @@
 const basicZombies = [
   {
-    "right": -20,
+    "right": 2,
     "startFrame": 2,
     "animation": require('../weapons/test.svg')
   },

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SpriteAnimator from '../../../node_modules/react-sprite-animator/lib';
+import SpriteAnimator from '../../../../node_modules/react-sprite-animator/lib';
 
 class FriendlyContainer extends Component {
   render() {

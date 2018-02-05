@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import UpgradesContainer from './upgrades/UpgradesContainer';
-import HeaderContainer from './header/HeaderContainer';
+
 import LoadingPage from './elements/LoadingPage';
 import Popup from './elements/Popup';
-import AnimationContainer from './animation/AnimationContainer';
+
+import GameSection from './gameSection/GameSection';
+import WeaponsSection from './weaponsSection/WeaponsSection';
 
 import upgradesWeapons from '../assets/data/upgradesWeapons';
 import upgradesAllies from '../assets/data/upgradesAllies';
+
 import basicZombies from '../assets/data/basicZombies';
 import zombies from '../assets/data/zombies';
 
@@ -90,7 +92,7 @@ class Main extends Component {
     // Initialiser les boucles de jeu
     this._moneyLoop();
 
-    this._saveLoop();
+    // this._saveLoop();
 
     this._zombieLoop();
 
@@ -188,18 +190,12 @@ class Main extends Component {
           <LoadingPage />
         :
           <div style={{height: windowHeight, width: windowWidth, display: 'flex', flex: 1, flexDirection: 'column'}}>
-            <section style={styles.header}>
-              <HeaderContainer damagesPerSecond={this.state.damagesPerSecond} money={this.state.money} zombiesAmount={this.state.zombiesAmount} />
+            <section style={styles.gameSection}>
+              <GameSection bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} upgradesAllies={this.state.upgradesAllies} manualDamages={this._manualDamages} foes={this.state.foes} basicFoes={this.state.basicFoes} damagesPerSecond={this.state.damagesPerSecond} money={this.state.money} zombiesAmount={this.state.zombiesAmount} />
             </section>
 
-            <section style={styles.gameSection}>
-              <UpgradesContainer upgrades={this.state.upgradesWeapons} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='weapons' />
-
-              <div style={styles.anim}>
-                <AnimationContainer manualDamages={this._manualDamages} bestWeapon={this.state.upgradesWeapons[this.state.indexBestWeapon]} upgradesAllies={this.state.upgradesAllies} foes={this.state.foes}basicFoes={this.state.basicFoes} />
-              </div>
-
-              <UpgradesContainer upgrades={this.state.upgradesAllies} triggerUpgrade={this._triggerUpgrade} money={this.state.money} upgradeType='allies' />
+            <section style={styles.weaponsSection}>
+              <WeaponsSection upgradeWeapons={this.state.upgradesWeapons} upgradeAllies={this.state.upgradesAllies} money={this.state.money} triggerUpgrade={this._triggerUpgrade} />
             </section>
           </div>
         }
@@ -209,8 +205,7 @@ class Main extends Component {
 }
 
 const styles = {
-  header: {
-    display: 'flex',
+  weaponsSection: {
     flex: 1,
   },
   gameSection: {
