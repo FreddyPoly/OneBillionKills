@@ -16,7 +16,7 @@ class UpgradeCard extends Component {
   }
 
   computePrice = (props) => {
-    return upgradesUtility.computePrice(props.upgrade.price.a, props.upgrade.price.b, props.upgrade.level, props.upgrade.price.c);
+    return upgradesUtility.computePrice(props.upgrade.price.a, props.upgrade.price.b, props.upgrade.level, props.upgrade.price.c, props.upgrade.price.d);
   }
 
   componentDidMount = () => {

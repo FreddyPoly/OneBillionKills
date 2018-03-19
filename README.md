@@ -11,7 +11,6 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 
 - Placer alliés et zombies de manière responsive
 - Définir la formule de calcul pour le nombre de zombies tués
-- Revoir la formule de calcul des prix
 - Revoir le taux d'argent gagné pour chaque upgrade
 - Feedback lors d'un clic manuel
 

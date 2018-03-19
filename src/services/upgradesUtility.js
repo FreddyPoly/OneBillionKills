@@ -1,6 +1,6 @@
 const upgradesUtility = {
-  computePrice(a, b, level, c) {
-    return Math.round((a * level) + b);
+  computePrice(a, b, level, c, d) {
+    return Math.floor(b + ((level / c) * Math.exp((d * level) / a)));
   }
 };
 
