@@ -13,7 +13,7 @@ class FoesContainer extends Component {
             { this.props.basicFoes.map((foe) => (
               <div
                 key={foe.right.toString()}
-                style={{position: 'absolute', right: foe.right}}>
+                style={{position: 'absolute', left: foe.right}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
