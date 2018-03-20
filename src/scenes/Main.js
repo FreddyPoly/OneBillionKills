@@ -44,14 +44,14 @@ class Main extends Component {
 
   componentWillMount = async () => {
     // Charger les données à partir du local storage
-    const tmpMoney = await localStorage.getCurrentMoney();
+    const tmpMoney = await localStorage.getCurrentMoney();  // Argent
     await this.setState({money: tmpMoney !== null ? tmpMoney : 0});
 
-    const tmpZombiesAmount = await localStorage.getZombiesAmount();
+    const tmpZombiesAmount = await localStorage.getZombiesAmount(); // Nombre de zombies tués
     await this.setState({zombiesAmount: tmpZombiesAmount !== null ? tmpZombiesAmount : 0});
 
-    const savedUpgradesWeapons = await localStorage.getUpgradesWeapons();
-    const savedUpgradesAllies = await localStorage.getUpgradesAllies();
+    const savedUpgradesWeapons = await localStorage.getUpgradesWeapons(); // Niveau des armes
+    const savedUpgradesAllies = await localStorage.getUpgradesAllies(); // Niveau des alliés
 
     const tmpUpgradesWeapons = upgradesWeapons;
     const tmpUpgradesAllies = upgradesAllies;
@@ -90,11 +90,11 @@ class Main extends Component {
     this._computeNbZombies();
 
     // Initialiser les boucles de jeu
-    this._moneyLoop();
-
-    // this._saveLoop();
-
-    this._zombieLoop();
+    this._moneyLoop();  // Gain d'argent
+    this._zombieLoop(); // Zombies à afficher
+    this._killZombieLoop(); // Nombre de zombies tués
+    // TODO: REMETTRE LA SAUVEGARDE
+    // this._saveLoop();  // Sauvegarde des données
 
     this.setState({initialiazing: false});
   }
@@ -122,6 +122,13 @@ class Main extends Component {
         }, Math.floor(Math.random() * 500) + 0);
       }
     }, 3000);
+  }
+
+  _killZombieLoop = () => {
+    // En partant du principe qu'un zombie a 10 points de vie
+    setInterval(() => {
+      this.setState({zombiesAmount: this.state.zombiesAmount + (parseFloat(this.state.damagesPerSecond).toFixed(2) / 10) });
+    }, 1000);
   }
 
   _moneyLoop = () => {
