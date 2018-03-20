@@ -5,9 +5,10 @@ const upgradesAllies = [
     "damages": 0.5,
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
-      "a": 1,
-      "b": 1.1,
-      "c": 1
+      "a": 10,
+      "b": 100,
+      "c": 1,
+      "d": 1
     },
     "animation": require('../weapons/test.svg')
   },
@@ -17,9 +18,10 @@ const upgradesAllies = [
     "damages": 1,
     "icon": "https://image.flaticon.com/icons/png/512/263/263094.png",
     "price": {
-      "a": 1,
-      "b": 1.1,
-      "c": 4
+      "a": 8,
+      "b": 250,
+      "c": 1,
+      "d": 1
     },
     "animation": require('../weapons/test.svg')
   },
@@ -29,9 +31,10 @@ const upgradesAllies = [
     "damages": 1.75,
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
-      "a": 1,
-      "b": 1.1,
-      "c": 99
+      "a": 6,
+      "b": 1000,
+      "c": 1,
+      "d": 1
     },
     "animation": require('../weapons/test.svg')
   },
@@ -41,9 +44,10 @@ const upgradesAllies = [
     "damages": 2,
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
-      "a": 1,
-      "b": 1.1,
-      "c": 159
+      "a": 4,
+      "b": 7500,
+      "c": 1,
+      "d": 1
     },
     "animation": require('../weapons/test.svg')
   },
@@ -53,9 +57,10 @@ const upgradesAllies = [
     "damages": 3,
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
-      "a": 1,
-      "b": 1.1,
-      "c": 179
+      "a": 2,
+      "b": 20000,
+      "c": 1,
+      "d": 1
     },
     "animation": require('../weapons/test.svg')
   },
@@ -66,8 +71,9 @@ const upgradesAllies = [
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
       "a": 1,
-      "b": 1.1,
-      "c": 349
+      "b": 150000,
+      "c": 1,
+      "d": 1
     },
     "animation": require('../weapons/test.svg')
   },
@@ -78,8 +84,9 @@ const upgradesAllies = [
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
       "a": 1,
-      "b": 1.1,
-      "c": 599
+      "b": 500000,
+      "c": 1,
+      "d": 2
     },
     "animation": require('../weapons/test.svg')
   }
