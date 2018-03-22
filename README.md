@@ -9,8 +9,6 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 
 ### Pour la beta 1
 
-- Placer alliés et zombies de manière responsive
-- Revoir le taux d'argent gagné pour chaque upgrade
 - Feedback lors d'un clic manuel
 
 - Passe design globale

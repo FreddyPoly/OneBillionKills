@@ -6,8 +6,8 @@ class FriendlyContainer extends Component {
     return (
       <div style={styles.container}>
         <div style={ styles.general } >
-          <div style={{position: 'relative'}}>
-            <div style={{position: 'absolute', right: 0}}>
+          <div style={{position: 'relative', width: '100%'}}>
+            <div style={{position: 'absolute', right: '0%'}}>
               <SpriteAnimator
                 width={72}
                 height={72}
@@ -16,7 +16,7 @@ class FriendlyContainer extends Component {
             </div>
 
             { this.props.upgradesAllies[0].level > 0 ?
-              <div style={{position: 'absolute', right: 80}}>
+              <div style={{position: 'absolute', right: '15%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
@@ -27,7 +27,7 @@ class FriendlyContainer extends Component {
               null }
             
             { this.props.upgradesAllies[1].level > 0 ?
-              <div style={{position: 'absolute', right: 150}}>
+              <div style={{position: 'absolute', right: '30%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
@@ -38,7 +38,7 @@ class FriendlyContainer extends Component {
               null }
               
             { this.props.upgradesAllies[2].level > 0 ?
-              <div style={{position: 'absolute', right: 210}}>
+              <div style={{position: 'absolute', right: '45%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
@@ -49,7 +49,7 @@ class FriendlyContainer extends Component {
               null }
               
             { this.props.upgradesAllies[3].level > 0 ?
-              <div style={{position: 'absolute', right: 280}}>
+              <div style={{position: 'absolute', right: '60%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
@@ -60,7 +60,7 @@ class FriendlyContainer extends Component {
               null }
               
             { this.props.upgradesAllies[4].level > 0 ?
-              <div style={{position: 'absolute', right: 360}}>
+              <div style={{position: 'absolute', right: '75%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
@@ -71,7 +71,7 @@ class FriendlyContainer extends Component {
               null }
               
             { this.props.upgradesAllies[5].level > 0 ?
-              <div style={{position: 'absolute', right: 450}}>
+              <div style={{position: 'absolute', right: '83%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
@@ -82,7 +82,7 @@ class FriendlyContainer extends Component {
               null }
               
             { this.props.upgradesAllies[6].level > 0 ?
-              <div style={{position: 'absolute', right: 520}}>
+              <div style={{position: 'absolute', right: '90%'}}>
                 <SpriteAnimator
                   width={72}
                   height={72}

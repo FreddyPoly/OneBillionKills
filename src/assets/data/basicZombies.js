@@ -1,56 +1,56 @@
 const basicZombies = [
   {
-    "right": 5,
+    "right": 2,
     "startFrame": 2,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 0,
+    "right": 12,
     "startFrame": 0,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 13,
+    "right": 21,
     "startFrame": 5,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 52,
+    "right": 27,
     "startFrame": 3,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 64,
+    "right": 32,
     "startFrame": 0,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 79,
+    "right": 43,
     "startFrame": 2,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 102,
+    "right": 48,
     "startFrame": 4,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 121,
+    "right": 73,
     "startFrame": 6,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 155,
+    "right": 80,
     "startFrame": 1,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 175,
+    "right": 81,
     "startFrame": 5,
     "animation": require('../weapons/test.svg')
   },
   {
-    "right": 182,
+    "right": 85,
     "startFrame": 3,
     "animation": require('../weapons/test.svg')
   },

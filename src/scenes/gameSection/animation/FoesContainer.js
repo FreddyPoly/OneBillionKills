@@ -8,12 +8,12 @@ class FoesContainer extends Component {
         style={styles.container}
         onClick={this.props.manualDamages} >
         <div style={ styles.general } >
-          <div style={{position: 'relative'}}>
+          <div style={{position: 'relative', width: '100%'}}>
 
             { this.props.basicFoes.map((foe) => (
               <div
                 key={foe.right.toString()}
-                style={{position: 'absolute', left: foe.right}}>
+                style={{position: 'absolute', right: `${foe.right}%`}}>
                 <SpriteAnimator
                   width={72}
                   height={72}
