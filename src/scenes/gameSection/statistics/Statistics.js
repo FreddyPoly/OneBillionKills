@@ -6,7 +6,7 @@ class Statistics extends Component {
       <div style={styles.container} >
         <p style={ styles.data } ><strong>{ this.props.damagesPerSecond }</strong> dégâts/s</p>
         <p style={ styles.data } ><strong>{ this.props.money }</strong> argent</p>
-        <p style={ styles.data } ><strong>{ parseInt(this.props.zombiesAmount) }</strong> zombies tués</p>
+        <p style={ styles.data } ><strong>{ parseInt(this.props.zombiesAmount, 10) }</strong> zombies tués</p>
       </div>
     );
   }
