@@ -173,7 +173,7 @@ class Main extends Component {
     this._computeNbZombies();
 
     // Mise à jour de la meilleure arme achetée
-    if (index > this.state.indexBestWeapon) this.setState({indexBestWeapon: index});
+    if (index > this.state.indexBestWeapon && type === 'weapons') this.setState({indexBestWeapon: index});
   }
 
   _manualDamages = () => {
