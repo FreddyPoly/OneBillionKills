@@ -10,7 +10,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_bow.svg')
   },
   {
     "name": "Tourelle",
@@ -23,7 +23,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_sentry_gun.svg')
   },
   {
     "name": "Tourelle v2",
@@ -36,7 +36,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_sentry_gun_v2.svg')
   },
   {
     "name": "Prototype de robot",
@@ -49,7 +49,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_mecha_v1.svg')
   },
   {
     "name": "Mecha",
@@ -62,7 +62,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_mecha_v2.svg')
   },
   {
     "name": "Robot géant",
@@ -75,7 +75,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_sentry_gun.svg')
   },
   {
     "name": "Tank",
@@ -88,7 +88,7 @@ const upgradesAllies = [
       "c": 1,
       "d": 2
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/ally_tank.svg')
   }
 ];
 

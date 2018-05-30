@@ -9,6 +9,7 @@ Cookie Clicker like game. Project made to learn React. One survivor has to kill 
 
 ### Pour la beta 1
 
+- Wireframes design simple
 - Feedback lors d'un clic manuel
 
 - Passe design globale

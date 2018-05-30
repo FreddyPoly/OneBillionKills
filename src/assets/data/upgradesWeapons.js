@@ -10,7 +10,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_poing.svg')
   },
   {
     "name": "Poing américain",
@@ -23,7 +23,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/heart.svg')
+    "animation": require('../weapons/weapon_poing_americain.svg')
   },
   {
     "name": "Batte de baseball",
@@ -36,7 +36,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_baseball.svg')
   },
   {
     "name": "Couteau",
@@ -49,7 +49,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_knife.svg')
   },
   {
     "name": "Sabre",
@@ -62,7 +62,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_sword.svg')
   },
   {
     "name": "Gants de boxe",
@@ -75,7 +75,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 1
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_gant_boxe.svg')
   },
   {
     "name": "Pistolet",
@@ -88,10 +88,10 @@ const upgradesWeapons = [
       "c": 1,
       "d": 2
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_pistolet.svg')
   },
   {
-    "name": "Revolver",
+    "name": "Fusil d'assaut",
     "level": 0,
     "damages": 3,
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
@@ -101,7 +101,7 @@ const upgradesWeapons = [
       "c": 1,
       "d": 5
     },
-    "animation": require('../weapons/test.svg')
+    "animation": require('../weapons/weapon_rifle.svg')
   }
 ];
 
