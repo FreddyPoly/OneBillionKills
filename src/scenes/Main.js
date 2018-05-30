@@ -94,7 +94,7 @@ class Main extends Component {
     this._zombieLoop(); // Zombies à afficher
     this._killZombieLoop(); // Nombre de zombies tués
     // TODO: REMETTRE LA SAUVEGARDE
-    this._saveLoop();  // Sauvegarde des données
+    // this._saveLoop();  // Sauvegarde des données
 
     this.setState({initialiazing: false});
   }
