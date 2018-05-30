@@ -31,7 +31,7 @@ class Main extends Component {
       nbZombiesMax: this.NB_ZOMBIES_MAX,
       nbZombiesMin: this.NB_ZOMBIES_MIN,
 
-      damagesPerSecond: 0.1,
+      damagesPerSecond: 1,
       money: 0,
       zombiesAmount: 0,
 
@@ -55,7 +55,7 @@ class Main extends Component {
 
     const tmpUpgradesWeapons = upgradesWeapons;
     const tmpUpgradesAllies = upgradesAllies;
-    let tmpDmg = 0;
+    let tmpDmg = this.state.damagesPerSecond;
     
     if (savedUpgradesWeapons !== null) {
       for (let i = 0; i < savedUpgradesWeapons.length; i += 1) {
@@ -94,7 +94,7 @@ class Main extends Component {
     this._zombieLoop(); // Zombies à afficher
     this._killZombieLoop(); // Nombre de zombies tués
     // TODO: REMETTRE LA SAUVEGARDE
-    // this._saveLoop();  // Sauvegarde des données
+    this._saveLoop();  // Sauvegarde des données
 
     this.setState({initialiazing: false});
   }
@@ -168,6 +168,7 @@ class Main extends Component {
       parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesWeapons[index].damages)
     :
       parseFloat(this.state.damagesPerSecond) + parseFloat(this.state.upgradesAllies[index].damages);
+
     this.setState({damagesPerSecond: tmpDamages.toFixed(2)});
 
     this._computeNbZombies();

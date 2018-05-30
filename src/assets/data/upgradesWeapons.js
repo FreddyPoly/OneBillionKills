@@ -2,11 +2,11 @@ const upgradesWeapons = [
   {
     "name": "Poings",
     "level": 1,
-    "damages": 0.1,
+    "damages": 0.25,
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
       "a": 10,
-      "b": 100,
+      "b": 10,
       "c": 1,
       "d": 1
     },
@@ -19,7 +19,7 @@ const upgradesWeapons = [
     "icon": "https://image.flaticon.com/icons/png/512/263/263094.png",
     "price": {
       "a": 8,
-      "b": 250,
+      "b": 25,
       "c": 1,
       "d": 1
     },
@@ -32,7 +32,7 @@ const upgradesWeapons = [
     "icon": "https://image.flaticon.com/icons/png/128/124/124148.png",
     "price": {
       "a": 6,
-      "b": 1000,
+      "b": 75,
       "c": 1,
       "d": 1
     },
