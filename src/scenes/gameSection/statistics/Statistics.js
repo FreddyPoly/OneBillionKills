@@ -4,7 +4,7 @@ class Statistics extends Component {
   render() {
     return (
       <div style={styles.container} >
-        <p style={ styles.data } ><strong>{ this.props.damagesPerSecond }</strong> dégâts/s</p>
+        <p style={ styles.data } ><strong>{ this.props.damagesPerSecond }</strong> AHAHAHAH/s</p>
         <p style={ styles.data } ><strong>{ this.props.money }</strong> argent</p>
         <p style={ styles.data } ><strong>{ parseInt(this.props.zombiesAmount, 10) }</strong> zombies tués</p>
       </div>
