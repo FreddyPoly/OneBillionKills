@@ -46,10 +46,11 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: 'gold',
     cursor: 'pointer',
   },
   general: {
+    position: 'relative',
+    top: '31%',
     display: 'flex',
     justifyContent: 'flex-end',
   },

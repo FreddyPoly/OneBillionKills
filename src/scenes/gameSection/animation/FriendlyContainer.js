@@ -100,11 +100,13 @@ class FriendlyContainer extends Component {
 
 const styles = {
   container: {
+    height: '30%',
+    position: 'relative',
+    top: '66%',
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: 'lightgreen'
   },
   general: {
     display: 'flex',
